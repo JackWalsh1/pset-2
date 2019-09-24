@@ -31,7 +31,27 @@ public class ProblemSet2 {
          *
          */
 
+         System.out.print("\nEnter your first name:");
+         String firstName = in.nextLine();
 
+         System.out.print("Enter your last name:");
+         String lastName = in.nextLine();
+
+         System.out.print("Enter your grade:");
+         int grade = in.nextInt();
+         in.nextLine();
+
+         System.out.print("Enter your age:");
+         int age = in.nextInt();
+         in.nextLine();
+
+         System.out.print("Enter your hometown:");
+         String hometown = in.next();
+
+         System.out.println("\nNAME \t : " + firstName + " " + lastName);
+         System.out.println("GRADE \t : " + grade);
+         System.out.println("AGE \t : " + age);
+         System.out.println("HOMETOWN : " + hometown);
 
         /*
          * Exercise 2.
@@ -40,7 +60,15 @@ public class ProblemSet2 {
          * bills, quarters, dimes, nickels, and pennies needed to produce this amount.
          */
 
+         System.out.print("Enter a dollar amount:");
+         double dollarAmount = in.nextDouble();
+         in.nextLine();
 
+         System.out.println("\nDOLLARS \t : " + firstName + " " + lastName);
+         System.out.println("QUARTERS \t : " + grade);
+         System.out.println("DIMES \t : " + age);
+         System.out.println("NICKELS : " + hometown);
+         System.out.println("PENNIES : " + hometown);
 
         /*
          * Exercise 3.
