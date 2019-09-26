@@ -154,7 +154,7 @@ public class ProblemSet2 {
          */
 
          System.out.print("\nEnter a number of inches:");
-         double inches = in.nextDouble(); //variable from Ex 2
+         double inches = in.nextDouble();
          in.nextLine();
 
          final int inchesPerMile = 63360;
@@ -186,7 +186,26 @@ public class ProblemSet2 {
          * meters, and centimeters.
          */
 
+         System.out.print("\nEnter a number of centimeters:");
+         double centimeters = in.nextDouble();
+         in.nextLine();
 
+         final int centimetersPerKilometers = 1000;
+         final int centimetersPerMeters= 100;
+
+         double kilometers;
+         double meters;
+
+         kilometers = Math.floor(centimeters / centimetersPerKilometers);
+         centimeters %= centimetersPerKilometers;
+
+         meters = Math.floor(centimeters / centimetersPerMeters);
+         centimeters %= centimetersPerMeters;
+
+
+         System.out.printf("%s %.0f", "\nKILOMETERS :", kilometers);
+         System.out.printf("%s %.0f", "\nMETERS\t   :", meters);
+         System.out.printf("%s %.0f", "\nCENTIMETERS:", centimeters);
 
         /*
          * Exercise 6.
