@@ -14,6 +14,7 @@
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
 
+import java.lang.Math;
 import java.util.Scanner;
 
 public class ProblemSet2 {
@@ -27,7 +28,7 @@ public class ProblemSet2 {
          * Prompt the user to enter the following information (in order): first name, last
          * name, grade, age, and hometown.
          *
-         * test
+         * SOLVED
          *
          */
 
@@ -46,7 +47,7 @@ public class ProblemSet2 {
          in.nextLine();
 
          System.out.print("Enter your hometown:");
-         String hometown = in.next();
+         String hometown = in.nextLine();
 
          System.out.println("\nNAME \t : " + firstName + " " + lastName);
          System.out.println("GRADE \t : " + grade);
@@ -60,16 +61,41 @@ public class ProblemSet2 {
          * bills, quarters, dimes, nickels, and pennies needed to produce this amount.
          */
 
-         System.out.print("Enter a dollar amount:");
-         double dollarAmount = in.nextDouble();
+         System.out.print("\nEnter a dollar amount:");
+         double initialMoney = in.nextDouble();
          in.nextLine();
 
-         System.out.println("\nDOLLARS \t : " + firstName + " " + lastName);
-         System.out.println("QUARTERS \t : " + grade);
-         System.out.println("DIMES \t : " + age);
-         System.out.println("NICKELS : " + hometown);
-         System.out.println("PENNIES : " + hometown);
-         
+         final int dollarValue = 1;
+         final double quarterValue = .25;
+         final double dimeValue = .10;
+         final double nickelValue = .05;
+         final double pennyValue = .01;
+         double dollarBills;
+         double quarters;
+         double dimes;
+         double nickels;
+         double pennies;
+         double remainingMoney;
+
+         dollarBills = Math.floor(initialMoney / dollarValue);
+         remainingMoney = initialMoney % dollarValue;
+
+         quarters = Math.floor(remainingMoney / quarterValue);
+         remainingMoney %= quarterValue;
+
+         dimes = Math.floor(remainingMoney / dimeValue);
+         remainingMoney %= dimeValue;
+
+         nickels = Math.floor(remainingMoney / nickelValue);
+         remainingMoney %= nickelValue;
+         pennies = Math.floor(remainingMoney / pennyValue);
+
+         System.out.printf("%s %.0f", "\nDOLLARS : ", dollarBills);
+         System.out.printf("%s %.0f", "\nQUARTERS: ", quarters);
+         System.out.printf("%s %.0f", "\nDIMES \t: ", dimes);
+         System.out.printf("%s %.0f", "\nNICKELS : ", nickels);
+         System.out.printf("%s %.0f", "\nPENNIES : ", pennies);
+
 
         /*
          * Exercise 3.
