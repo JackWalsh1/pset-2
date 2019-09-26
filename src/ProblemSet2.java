@@ -69,6 +69,7 @@ public class ProblemSet2 {
          System.out.println("DIMES \t : " + age);
          System.out.println("NICKELS : " + hometown);
          System.out.println("PENNIES : " + hometown);
+         
 
         /*
          * Exercise 3.
