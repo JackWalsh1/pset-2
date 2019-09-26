@@ -102,8 +102,45 @@ public class ProblemSet2 {
          *
          * Given a dollar amount in the range [0.00, 20.00], print the smallest number of
          * bills and coins needed to produce this amount.
+         *
+         * SOLVED
+         *
          */
 
+         System.out.print("\nEnter a dollar amount:");
+         initialMoney = in.nextDouble(); //variable from Ex 2
+         in.nextLine();
+
+         final int tenDollarValue = 10;
+         final int fiveDollarValue = 5;
+         double tenDollarBills;
+         double fiveDollarBills;
+         //Dollar, quarter, dime, nickel, and penny value and storage from above.
+
+         tenDollarBills = Math.floor(initialMoney / tenDollarValue);
+         remainingMoney = initialMoney % tenDollarValue;
+
+         fiveDollarBills = Math.floor(remainingMoney / fiveDollarValue);
+         remainingMoney %= fiveDollarValue;
+
+         dollarBills = Math.floor(remainingMoney / dollarValue);
+         remainingMoney %= dollarValue;
+
+         quarters = Math.floor(remainingMoney / quarterValue);
+         remainingMoney %= quarterValue;
+
+         dimes = Math.floor(remainingMoney / dimeValue);
+         remainingMoney %= dimeValue;
+
+         nickels = Math.floor(remainingMoney / nickelValue);
+         remainingMoney %= nickelValue;
+         pennies = Math.floor(remainingMoney / pennyValue);
+
+         double billCount = tenDollarBills + fiveDollarBills + dollarBills;
+         double coinCount = quarters + dimes + nickels + pennies;
+
+         System.out.printf("%s %.0f", "\nBILLS\t: ", billCount);
+         System.out.printf("%s %.0f", "\nCOINS\t: ", coinCount);
 
 
         /*
@@ -111,9 +148,36 @@ public class ProblemSet2 {
          *
          * Given a number of inches, print the equivalent number of miles, yards, feet,
          * and inches.
+         *
+         * SOLVED
+         *
          */
 
+         System.out.print("\nEnter a number of inches:");
+         double inches = in.nextDouble(); //variable from Ex 2
+         in.nextLine();
 
+         final int inchesPerMile = 63360;
+         final int inchesPerYard = 36;
+         final int inchesPerFoot = 12;
+
+         double miles;
+         double yards;
+         double feet;
+
+         miles = Math.floor(inches / inchesPerMile);
+         inches %= inchesPerMile;
+
+         yards = Math.floor(inches / inchesPerYard);
+         inches %= inchesPerYard;
+
+         feet = Math.floor(inches / inchesPerFoot);
+         inches %= inchesPerFoot;
+
+         System.out.printf("%s %.0f", "\nMILES\t:", miles);
+         System.out.printf("%s %.0f", "\nYARDS\t:", yards);
+         System.out.printf("%s %.0f", "\nFEET \t:", feet);
+         System.out.printf("%s %.0f", "\nINCHES\t:", inches);
 
         /*
          * Exercise 5.
