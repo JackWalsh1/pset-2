@@ -107,7 +107,7 @@ public class ProblemSet2 {
          *
          */
 
-         System.out.print("\nEnter a dollar amount: ");
+         System.out.print("\n" + "Enter a dollar amount: ");
          initialMoney = in.nextDouble(); //variable from Ex 2
          in.nextLine();
 
@@ -236,11 +236,11 @@ public class ProblemSet2 {
          *
          */
 
-         System.out.print("\nEnter a length: ");
+         System.out.print("Enter a length: ");
          double lengthRectangle = in.nextDouble();
          in.nextLine();
 
-         System.out.print("\nEnter a width: ");
+         System.out.print("Enter a width: ");
          double widthRectangle = in.nextDouble();
          in.nextLine();
 
@@ -251,7 +251,7 @@ public class ProblemSet2 {
 
          System.out.printf("%s %.2f", "\nAREA \t :", areaRectangle);
          System.out.printf("%s %.2f", "\nPERIMETER:", perimeterRectangle);
-         System.out.printf("%s %.2f", "\nDIAGONAL:", diagonalRectangle);
+         System.out.printf("%s %.2f %s", "\nDIAGONAL:", diagonalRectangle, "\n");
 
         /*
          * Exercise 8.
@@ -259,7 +259,7 @@ public class ProblemSet2 {
          * Given a side length, print the area and perimeter of the corresponding hexagon.
          */
 
-         System.out.print("\nEnter a side length: ");
+         System.out.print("Enter a side length: ");
          double sideLengthHexagon = in.nextDouble();
          in.nextLine();
 
@@ -267,7 +267,7 @@ public class ProblemSet2 {
          double perimeterHexagon = 6 * sideLengthHexagon;
 
          System.out.printf("%s %.2f", "\nAREA \t :", areaHexagon);
-         System.out.printf("%s %.2f", "\nPERIMETER:", perimeterHexagon);
+         System.out.printf("%s %.2f %s", "\nPERIMETER:", perimeterHexagon, "\n");
 
         /*
          * Exercise 9.
@@ -275,16 +275,14 @@ public class ProblemSet2 {
          * Given a string, reverse and print the first and second halves of that string.
          */
 
-         System.out.println("Enter a string: ");
+         System.out.print("\nEnter a string: ");
          String initialString = in.nextLine();
-
          int stringLength = initialString.length();
-         int splicePoint = (stringLength)/2;
+         int splicePoint = (stringLength / 2); //-1 because index starts at 0
          String firstHalf = initialString.substring(0, splicePoint);
-         String secondHalf = initialString.substring((splicePoint + 1));
+         String secondHalf = initialString.substring((splicePoint));
 
-         System.out.println(secondHalf + firstHalf);
-
+         System.out.println(secondHalf + firstHalf + "\n");
 
         /*
          * Exercise 10.
@@ -292,8 +290,18 @@ public class ProblemSet2 {
          * Given a first, middle, and last name, print the corresponding initials.
          */
 
+         System.out.print("Enter your first name: ");
+         firstName = in.nextLine();
+         System.out.print("Enter your middle name: ");
+         String middleName = in.nextLine();
+         System.out.print("Enter your last name: ");
+         lastName = in.nextLine();
 
+         String firstInitial = firstName.substring(0, 1);
+         String middleInitial = middleName.substring(0, 1);
+         String lastInitial = lastName.substring(0, 1);
 
+         System.out.print("\n" + firstInitial + middleInitial + lastInitial);
         in.close();
     }
 }
