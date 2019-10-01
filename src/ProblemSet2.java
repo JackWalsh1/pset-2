@@ -112,7 +112,7 @@ public class ProblemSet2 {
          in.nextLine();
 
          final int TEN_DOLLAR_VALUE = 10;
-         final int TEN_DOLLAR_VALUE = 5;
+         final int FIVE_DOLLAR_VALUE = 5;
          double tenDollarBills;
          double fiveDollarBills;
          //Dollar, quarter, dime, nickel, and penny value and storage from above.
@@ -120,8 +120,8 @@ public class ProblemSet2 {
          tenDollarBills = Math.floor(initialMoney / TEN_DOLLAR_VALUE);
          remainingMoney = initialMoney % TEN_DOLLAR_VALUE;
 
-         fiveDollarBills = Math.floor(remainingMoney / TEN_DOLLAR_VALUE);
-         remainingMoney %= TEN_DOLLAR_VALUE;
+         fiveDollarBills = Math.floor(remainingMoney / FIVE_DOLLAR_VALUE);
+         remainingMoney %= FIVE_DOLLAR_VALUE;
 
          dollarBills = Math.floor(remainingMoney / DOLLAR_VALUE);
          remainingMoney %= DOLLAR_VALUE;
@@ -275,6 +275,15 @@ public class ProblemSet2 {
          * Given a string, reverse and print the first and second halves of that string.
          */
 
+         System.out.println("Enter a string: ");
+         String initialString = in.nextLine();
+
+         int stringLength = initialString.length();
+         int splicePoint = (stringLength)/2;
+         String firstHalf = initialString.substring(0, splicePoint);
+         String secondHalf = initialString.substring((splicePoint + 1));
+
+         System.out.println(secondHalf + firstHalf);
 
 
         /*
