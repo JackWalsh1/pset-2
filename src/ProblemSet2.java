@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2019. UCVTS and its affiliated.
+ *
+ * All copyright information will be written here. It tells users what is or
+ * isn't an acceptable use of your source code. You won't need to include
+ * copyright information in your source code, but you should recognize it
+ * should you encounter it in someone else's code.
+ */
+
 /**
  * Problem Set 2.
  *
@@ -122,7 +131,7 @@ public class ProblemSet2 {
          twentyDollarBills = Math.floor(initialMoney / TWENTY_DOLLAR_VALUE);
          remainingMoney = initialMoney % TWENTY_DOLLAR_VALUE;
 
-         tenDollarBills = Math.floor(initialMoney / TEN_DOLLAR_VALUE);
+         tenDollarBills = Math.floor(remainingMoney / TEN_DOLLAR_VALUE);
          remainingMoney %= TEN_DOLLAR_VALUE;
 
          fiveDollarBills = Math.floor(remainingMoney / FIVE_DOLLAR_VALUE);
@@ -179,9 +188,9 @@ public class ProblemSet2 {
          feet = Math.floor(inches / INCHES_PER_FOOT);
          inches %= INCHES_PER_FOOT;
 
-         System.out.printf("%s %.0f", "\nMILES :", miles);
-         System.out.printf("%s %.0f", "\nYARDS :", yards);
-         System.out.printf("%s %.0f", "\nFEET :", feet);
+         System.out.printf("%s %.0f", "\nMILES  :", miles);
+         System.out.printf("%s %.0f", "\nYARDS  :", yards);
+         System.out.printf("%s %.0f", "\nFEET   :", feet);
          System.out.printf("%s %.0f %s", "\nINCHES :", inches, "\n");
 
         /*
@@ -228,7 +237,7 @@ public class ProblemSet2 {
          double areaCircle =  Math.PI * Math.pow((diameter / 2), 2);
          double circumferenceCircle = Math.PI * diameter;
 
-         System.out.printf("%s %.2f", "\nAREA\t  :", areaCircle);
+         System.out.printf("%s %.2f", "\nAREA\t     :", areaCircle);
          System.out.printf("%s %.2f %s", "\nCIRCUMFERENCE :", circumferenceCircle, "\n");
 
         /*
@@ -254,9 +263,9 @@ public class ProblemSet2 {
          double perimeterRectangle = (2*lengthRectangle) + (2*widthRectangle);
          double diagonalRectangle = Math.sqrt(Math.pow(lengthRectangle, 2) + Math.pow(widthRectangle, 2));
 
-         System.out.printf("%s %.2f", "\nAREA\t   :", areaRectangle);
+         System.out.printf("%s %.2f", "\nAREA\t  :", areaRectangle);
          System.out.printf("%s %.2f", "\nPERIMETER :", perimeterRectangle);
-         System.out.printf("%s %.2f %s", "\nDIAGONAL   :", diagonalRectangle, "\n");
+         System.out.printf("%s %.2f %s", "\nDIAGONAL  :", diagonalRectangle, "\n");
 
         /*
          * Exercise 8.
@@ -271,7 +280,7 @@ public class ProblemSet2 {
          double areaHexagon = ((3 * Math.sqrt(3))/2) * Math.pow(sideLengthHexagon, 2);
          double perimeterHexagon = 6 * sideLengthHexagon;
 
-         System.out.printf("%s %.2f", "\nAREA\t    :", areaHexagon);
+         System.out.printf("%s %.2f", "\nAREA\t  :", areaHexagon);
          System.out.printf("%s %.2f %s", "\nPERIMETER :", perimeterHexagon, "\n");
 
         /*
@@ -285,9 +294,9 @@ public class ProblemSet2 {
          int stringLength = initialString.length();
          int splicePoint = (stringLength / 2); //-1 because index starts at 0
          String firstHalf = initialString.substring(0, splicePoint);
-         String secondHalf = initialString.substring((splicePoint));
+         String secondHalf = initialString.substring(splicePoint);
 
-         System.out.println(secondHalf + firstHalf + "\n");
+         System.out.println("\n" + secondHalf + firstHalf + "\n");
 
         /*
          * Exercise 10.
