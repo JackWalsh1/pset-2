@@ -90,11 +90,11 @@ public class ProblemSet2 {
          remainingMoney %= NICKEL_VALUE;
          pennies = Math.floor(remainingMoney / PENNY_VALUE);
 
-         System.out.printf("%s %.0f", "\nDOLLARS : ", dollarBills);
-         System.out.printf("%s %.0f", "\nQUARTERS: ", quarters);
-         System.out.printf("%s %.0f", "\nDIMES \t: ", dimes);
-         System.out.printf("%s %.0f", "\nNICKELS : ", nickels);
-         System.out.printf("%s %.0f", "\nPENNIES : ", pennies);
+         System.out.printf("%s %.0f", "\nDOLLARS  : ", dollarBills);
+         System.out.printf("%s %.0f", "\nQUARTERS : ", quarters);
+         System.out.printf("%s %.0f", "\nDIMES \t : ", dimes);
+         System.out.printf("%s %.0f", "\nNICKELS  : ", nickels);
+         System.out.printf("%s %.0f %s", "\nPENNIES  : ", pennies, "\n");
 
 
         /*
@@ -111,14 +111,19 @@ public class ProblemSet2 {
          initialMoney = in.nextDouble(); //variable from Ex 2
          in.nextLine();
 
+         final int TWENTY_DOLLAR_VALUE = 20;
          final int TEN_DOLLAR_VALUE = 10;
          final int FIVE_DOLLAR_VALUE = 5;
+         double twentyDollarBills;
          double tenDollarBills;
          double fiveDollarBills;
          //Dollar, quarter, dime, nickel, and penny value and storage from above.
 
+         twentyDollarBills = Math.floor(initialMoney / TWENTY_DOLLAR_VALUE);
+         remainingMoney = initialMoney % TWENTY_DOLLAR_VALUE;
+
          tenDollarBills = Math.floor(initialMoney / TEN_DOLLAR_VALUE);
-         remainingMoney = initialMoney % TEN_DOLLAR_VALUE;
+         remainingMoney %= TEN_DOLLAR_VALUE;
 
          fiveDollarBills = Math.floor(remainingMoney / FIVE_DOLLAR_VALUE);
          remainingMoney %= FIVE_DOLLAR_VALUE;
@@ -136,11 +141,11 @@ public class ProblemSet2 {
          remainingMoney %= NICKEL_VALUE;
          pennies = Math.floor(remainingMoney / PENNY_VALUE);
 
-         double billCount = tenDollarBills + fiveDollarBills + dollarBills;
+         double billCount = twentyDollarBills + tenDollarBills + fiveDollarBills + dollarBills;
          double coinCount = quarters + dimes + nickels + pennies;
 
-         System.out.printf("%s %.0f", "\nBILLS\t: ", billCount);
-         System.out.printf("%s %.0f", "\nCOINS\t: ", coinCount);
+         System.out.printf("%s %.0f", "\nBILLS : ", billCount);
+         System.out.printf("%s %.0f %s", "\nCOINS : ", coinCount, "\n");
 
 
         /*
@@ -174,10 +179,10 @@ public class ProblemSet2 {
          feet = Math.floor(inches / INCHES_PER_FOOT);
          inches %= INCHES_PER_FOOT;
 
-         System.out.printf("%s %.0f", "\nMILES\t:", miles);
-         System.out.printf("%s %.0f", "\nYARDS\t:", yards);
-         System.out.printf("%s %.0f", "\nFEET \t:", feet);
-         System.out.printf("%s %.0f", "\nINCHES\t:", inches);
+         System.out.printf("%s %.0f", "\nMILES :", miles);
+         System.out.printf("%s %.0f", "\nYARDS :", yards);
+         System.out.printf("%s %.0f", "\nFEET :", feet);
+         System.out.printf("%s %.0f %s", "\nINCHES :", inches, "\n");
 
         /*
          * Exercise 5.
@@ -203,9 +208,9 @@ public class ProblemSet2 {
          centimeters %= CENTIMETERS_PER_METER;
 
 
-         System.out.printf("%s %.0f", "\nKILOMETERS :", kilometers);
-         System.out.printf("%s %.0f", "\nMETERS\t   :", meters);
-         System.out.printf("%s %.0f", "\nCENTIMETERS:", centimeters);
+         System.out.printf("%s %.0f", "\nKILOMETERS  :", kilometers);
+         System.out.printf("%s %.0f", "\nMETERS\t    :", meters);
+         System.out.printf("%s %.0f %s", "\nCENTIMETERS :", centimeters, "\n");
 
         /*
          * Exercise 6.
@@ -223,8 +228,8 @@ public class ProblemSet2 {
          double areaCircle =  Math.PI * Math.pow((diameter / 2), 2);
          double circumferenceCircle = Math.PI * diameter;
 
-         System.out.printf("%s %.2f", "\nAREA \t :", areaCircle);
-         System.out.printf("%s %.2f", "\nCIRCUMFERENCE:", circumferenceCircle);
+         System.out.printf("%s %.2f", "\nAREA\t  :", areaCircle);
+         System.out.printf("%s %.2f %s", "\nCIRCUMFERENCE :", circumferenceCircle, "\n");
 
         /*
          * Exercise 7.
@@ -236,7 +241,7 @@ public class ProblemSet2 {
          *
          */
 
-         System.out.print("Enter a length: ");
+         System.out.print("\nEnter a length: ");
          double lengthRectangle = in.nextDouble();
          in.nextLine();
 
@@ -249,9 +254,9 @@ public class ProblemSet2 {
          double perimeterRectangle = (2*lengthRectangle) + (2*widthRectangle);
          double diagonalRectangle = Math.sqrt(Math.pow(lengthRectangle, 2) + Math.pow(widthRectangle, 2));
 
-         System.out.printf("%s %.2f", "\nAREA \t :", areaRectangle);
-         System.out.printf("%s %.2f", "\nPERIMETER:", perimeterRectangle);
-         System.out.printf("%s %.2f %s", "\nDIAGONAL:", diagonalRectangle, "\n");
+         System.out.printf("%s %.2f", "\nAREA\t   :", areaRectangle);
+         System.out.printf("%s %.2f", "\nPERIMETER :", perimeterRectangle);
+         System.out.printf("%s %.2f %s", "\nDIAGONAL   :", diagonalRectangle, "\n");
 
         /*
          * Exercise 8.
@@ -259,15 +264,15 @@ public class ProblemSet2 {
          * Given a side length, print the area and perimeter of the corresponding hexagon.
          */
 
-         System.out.print("Enter a side length: ");
+         System.out.print("\nEnter a side length: ");
          double sideLengthHexagon = in.nextDouble();
          in.nextLine();
 
          double areaHexagon = ((3 * Math.sqrt(3))/2) * Math.pow(sideLengthHexagon, 2);
          double perimeterHexagon = 6 * sideLengthHexagon;
 
-         System.out.printf("%s %.2f", "\nAREA \t :", areaHexagon);
-         System.out.printf("%s %.2f %s", "\nPERIMETER:", perimeterHexagon, "\n");
+         System.out.printf("%s %.2f", "\nAREA\t    :", areaHexagon);
+         System.out.printf("%s %.2f %s", "\nPERIMETER :", perimeterHexagon, "\n");
 
         /*
          * Exercise 9.
@@ -301,7 +306,7 @@ public class ProblemSet2 {
          String middleInitial = middleName.substring(0, 1);
          String lastInitial = lastName.substring(0, 1);
 
-         System.out.print("\n" + firstInitial + middleInitial + lastInitial);
+         System.out.print("\n" + firstInitial + middleInitial + lastInitial + "\n");
         in.close();
     }
 }
